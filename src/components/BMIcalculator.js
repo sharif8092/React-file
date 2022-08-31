@@ -1,5 +1,9 @@
 import "./components.css";
 import {createRef, useEffect, useState} from "react"
+import Button from '@mui/material/Button';
+import Input from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
+
 
 function BMIcalculator(){
 
@@ -7,7 +11,8 @@ function BMIcalculator(){
     const[height, setHeight] = useState('');
     const[BMI , setBMI] = useState('');
     const[message,setMessage] = useState('');
-
+    
+    // localStorage.setItem('score' , '10');
 
  const btnRef = createRef();
  useEffect(()=>{
@@ -39,21 +44,33 @@ function BMIcalculator(){
 
 
     return(
-       <>
+       <div className="container">
+         <div>
         <div className="bmi-main-div">
             <h1>BMI Calculator</h1>
         </div>
         <div className="bmi-container">
         <div className="bmi-input">
-            <input type="number" value={weight} onChange={(e)=> setWeight(e.target.value)} placeholder="weigth in kg" />
-            <input type="number" value={height} onChange={(e)=> setHeight(e.target.value)} placeholder="height in cm" />
-            <button className="btn-ref" ref={btnRef} onClick={calculateBMI}>Claculate BMI</button>
+            <TextField  type="number" value={weight}
+             onChange={(e)=> setWeight(Number(e.target.value))}
+             placeholder="weigth in kg" className="input-field" id="inpt1"/> <br />
+            <TextField  type="number" value={height} 
+            onChange={(e)=> setHeight(Number(e.target.value))}
+             placeholder="height in cm" className="input-field"  id="inpt2"/>
+            <Button className="btn-ref" ref={btnRef} onClick={calculateBMI}
+            variant="contained" id="btn" >Claculate BMI</Button>
             <h3>Your BMI is :{BMI}</h3>
             <h3>{message}</h3>
+             {/* <Button variant="contained">Hello World</Button>; */}
+
+             {/* <Input id="outlined-basic" label="Outlined" variant="outlined" /> */}
+
+            {/* <h1>{localStorage.getItem('score')} </h1> */}
 
         </div>
         </div>
-        </>
+        </div>
+        </div>
     );
 }
 export default BMIcalculator ;

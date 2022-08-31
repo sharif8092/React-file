@@ -5,6 +5,10 @@
 }
 
 /* bmi css components */
+.container{
+    background-color: #eee ;
+
+}
 .bmi-main-div{
     
    text-align: center;
@@ -18,18 +22,19 @@
     flex-direction: column;
     width: 300px;
     margin-inline: auto;
-    margin-top: -20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     
     
     
 }
-.bmi-input input{
-    margin-bottom: 10px;
+.input-field{
+    margin-bottom: 100px;
     border-radius: 3px;
-    background-color: rgb(28, 43, 36);
-    color: aliceblue;
-    height: 23px;
-    margin: 10px auto;
+    /* background-color: rgb(28, 43, 36); */
+    color: black;
+    /* height: 30px; */
+    
     width: 300px;
     border: none;
 
@@ -43,18 +48,34 @@
 
 .btn-ref{
     
-    background:#0B595E;
-    height: 23px;
-    width: 305px;
+    /* background:#0B595E; */
+    /* height: 23px; */
+    width: 300px;
     border-radius: 2px;
     border: none;
+    padding: 20px;
 }
 
-.btn-ref:disabled{
+/* .btn-ref:disabled{
     background:#b1c5c7;
     
 
-}
+} */
 .bmi-input h3{
     text-align: center;
+}
+
+#inpt1{
+   margin-top: 15px;
+   height: 10px;
+   padding-top: 2px;
+}
+#inpt2{
+    margin-top: 15px;
+   height: 10px;
+   padding-top: 2px;
+}
+#btn{
+    margin-top: 15px;
+  
 }
